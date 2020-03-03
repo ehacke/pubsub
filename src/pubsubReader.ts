@@ -40,7 +40,7 @@ export class PubsubReader<T extends object> {
    * @param {function} processMsg
    * @returns {function}
    */
-  private internalMessageProcessor = (processMsg: (message: T) => Promise<void>) => async (message: Message): Promise<void> => {
+  private internalMessageProcessor = (processMsg: (message: T) => Promise<any>) => async (message: Message): Promise<void> => {
     try {
       const testResult = this.fromJson(JSON.parse(message.data.toString()));
       await Bluebird.try(() => processMsg(testResult));
@@ -63,7 +63,7 @@ export class PubsubReader<T extends object> {
    * @param {function} processMsg
    * @returns {Promise<void>}
    */
-  async open(processMsg: (message: T) => Promise<void>): Promise<void> {
+  async open(processMsg: (message: T) => Promise<any>): Promise<void> {
     const [topic] = await this.services.pubsub.topic(this.config.topicName).get({ autoCreate: true });
     const [subscription] = await topic.subscription(this.config.subscriptionName).get({ autoCreate: true });
 
