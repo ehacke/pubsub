@@ -1,7 +1,7 @@
 {
   "name": "@ehacke/pubsub",
   "description": "Simple pubsub wrapper",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Eric Hacke",
   "bugs": {
     "url": "https://github.com/ehacke/pubsub/issues"
