@@ -77,7 +77,7 @@
       "npm run docs"
     ]
   },
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
   "nyc": {
     "extends": "@istanbuljs/nyc-config-typescript",
     "all": true,
@@ -118,5 +118,5 @@
     "prepublishOnly": "npm run build",
     "test": "nyc mocha --recursive -r source-map-support/register -r ts-node/register -r tsconfig-paths/register --use_strict --exit \"tests/**/*.+(unit|it).+(ts|js)\""
   },
-  "types": "dist/index.d.ts"
+  "types": "dist/src/index.d.ts"
 }
