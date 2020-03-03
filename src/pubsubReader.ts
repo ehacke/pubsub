@@ -63,7 +63,7 @@ export class PubsubReader<T extends object> {
    * @param {function} processMsg
    * @returns {Promise<void>}
    */
-  async open(processMsg: (message) => Promise<void>): Promise<void> {
+  async open(processMsg: (message: T) => Promise<void>): Promise<void> {
     const [topic] = await this.services.pubsub.topic(this.config.topicName).get({ autoCreate: true });
     const [subscription] = await topic.subscription(this.config.subscriptionName).get({ autoCreate: true });
 
