@@ -42,7 +42,7 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.4",
     "luxon": "^1.24.1",
-    "mocha": "^7.1.2",
+    "mocha": "^10.2.0",
     "nyc": "^15.0.1",
     "prettier": "^2.0.5",
     "prettier-eslint-cli": "^5.0.0",
